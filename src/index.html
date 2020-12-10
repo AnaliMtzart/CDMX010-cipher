@@ -2,12 +2,71 @@
 <html>
   <head>
     <meta charset="utf-8">
+    
+    <!--agregue --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
     <title>Caesar Cipher</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+     <!-- Inicio Primer pantalla -->
     <div id="root">
-      <h1>Hello world!</h1>
+      <div class="contenedor">
+        <div id="contendedor-intro">
+          <div id="introSite" class="full" >
+            <img src="img/mikiLogo.svg" alt="Logo" class="img-resposive">
+            <h1>¿Deseas cambiar tu contraseña </br>o requieres una más compleja?</h1>
+            <p>
+            El objetivo principal de MIKI es generar una contraseña de difícil acceso para 
+            los hackers. Ofreciendo una clave más allá de lo común, partiendo de ese texto o 
+            frase especial para el usuario y devolviéndola de una manera más sólida, única y 
+            segura para su posterior uso en distintas situaciones.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- pantalla Cipher -->
+      <section id="cipher" class="">
+        <div class="contenedor contenedor-cipher">
+
+          <div class="boxCipher"> 
+            <h2>Cifrar</h2>
+            <p>Ingresa tu texto en MAYÚSCULAS</p>
+        
+              <input type="text" class="border-bottom" id="cifrar" placeholder="Colocar tu texto aquí" maxlength="15" required>
+              <div class="desplazamiento">
+                <label for="offset">Elige el desplazamiento (1-35)</label>
+                <input id="offsetEc" name="offsetEc" required>
+                <button id="btnEncode" class="boton">ENVIAR</button>
+              </div>
+           
+            <div class="textEncode">
+              <label for="encodeR">Tu nueva contraseña es:</label>
+              <h2 id="encodeResult"></h2>
+            </div>
+          </div>
+
+          <div class="boxCipher"> 
+            <h2>Descifrar</h2>
+            <p>Ingresa tu texto en MAYÚSCULAS</p>
+
+            <input type="text" class="border-bottom" name="decifrar" id="decifrar" placeholder="Colocar tu texto aquí" maxlength="15" required>
+            <div class="desplazamiento">
+              <label for="offset">Elige el desplazamiento (1-35)</label>
+              <input type="number" id="offsetDc" name="offsetDc" min="1" max="35" required>
+              <input type="submit" id="btnDecode" value="ENVIAR" class="boton" onclick="resultadoDecodificar()">
+            </div>
+
+            <div class="textDecode">
+              <label for="encodeR">Tu frase secreta es:</label>
+              <h2 id="decodeResult"></h2>
+            </div>
+          </div>
+          
+        </div>
+      </section>
     </div>
     <script src="index.js" type="module"></script>
   </body>
