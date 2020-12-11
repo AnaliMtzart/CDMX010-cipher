@@ -30,37 +30,43 @@
       <!-- pantalla Cipher -->
       <section id="cipher" class="">
         <div class="contenedor contenedor-cipher">
-
+          <!-- contendedor de cifrado -->
           <div class="boxCipher"> 
-            <h2>Cifrar</h2>
-            <p>Ingresa tu texto en MAYÚSCULAS</p>
-        
+            <h2>CIFRAR</h2>
+            <p>Ingresa tu texto en MAYÚSCULAS y sin espacios</p>
+              <!-- caja de texto  -->
               <input type="text" class="border-bottom" id="cifrar" placeholder="Colocar tu texto aquí" maxlength="15" required>
+              <!-- offset -->
               <div class="desplazamiento">
-                <label for="offset">Elige el desplazamiento (1-35)</label>
-                <input id="offsetEc" name="offsetEc" required>
-                <button id="btnEncode" class="boton">ENVIAR</button>
+                <label for="desplazar">Elige el desplazamiento (1-35)</label>
+                <!-- <input type="number" id="offsetEc" name="offsetEc" required> -->
+                <input type="text" id="offsetEc" size="4" required>
+                <input type="submit" id="btnEncode" value="CIFRAR" class="boton">
               </div>
-           
+            <!-- Espacio de resultado -->
             <div class="textEncode">
-              <label for="encodeR">Tu nueva contraseña es:</label>
+              <label for="contrasena">Tu nueva contraseña es:</label>
               <h2 id="encodeResult"></h2>
             </div>
           </div>
 
+
+          <!-- contendedor de decifrado -->
           <div class="boxCipher"> 
-            <h2>Descifrar</h2>
-            <p>Ingresa tu texto en MAYÚSCULAS</p>
-
-            <input type="text" class="border-bottom" name="decifrar" id="decifrar" placeholder="Colocar tu texto aquí" maxlength="15" required>
+            <h2>DESCIFRAR</h2>
+            <p>Ingresa tu texto en MAYÚSCULAS y sin espacios</p>
+            <!-- caja de texto  -->
+            <input type="text" class="border-bottom" id="decifrar" placeholder="Colocar tu texto aquí" maxlength="15" required>
+            <!-- offset -->
             <div class="desplazamiento">
-              <label for="offset">Elige el desplazamiento (1-35)</label>
-              <input type="number" id="offsetDc" name="offsetDc" min="1" max="35" required>
-              <input type="submit" id="btnDecode" value="ENVIAR" class="boton" onclick="resultadoDecodificar()">
+              <label for="desplazar">Elige el desplazamiento (1-35)</label>
+              <!-- <input type="number" id="offsetDc" name="offsetDc" min="1" max="35" required> onclick="resultadoDecodificar()"-->
+              <input type="text" id="offsetDc"  size="4" required>
+              <input type="submit" id="btnDecode" value="DESCIFRAR" class="boton">
             </div>
-
+            <!-- Espacio de resultado -->
             <div class="textDecode">
-              <label for="encodeR">Tu frase secreta es:</label>
+              <label for="frase">Tu frase secreta es:</label>
               <h2 id="decodeResult"></h2>
             </div>
           </div>

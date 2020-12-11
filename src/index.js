@@ -4,23 +4,36 @@ import cipher from './cipher.js';
 //cipher.encode( 3, 'ABC');
     
 
-    /*document.getElementById('btnEncode').addEventListener('click', function(){
-        let offset = document.getElementById('offsetEc').value; 
-        let string = document.getElementById('cifrar').value;
 
-        cipher.encode(offset, string);
-    })*/
-
-let offset = document.getElementById('offsetEc').value; 
-let string = document.getElementById('cifrar').value;
-console.log(offset)
+//console.log(offset)
 
 document.getElementById('btnEncode').addEventListener('click', function() {
-    console.log(offset,string)
-     cipher.encode(offset, string)
+    let offset = parseInt(document.getElementById('offsetEc').value); 
+    let string = document.getElementById('cifrar').value;
+    
+
+    let divResultado = document.querySelector("#encodeResult");
+    let contrasena = cipher.encode(offset,string);
+    console.log(contrasena);
+    divResultado.innerHTML = `${contrasena}`
+
 });
 
-console.log(cipher.encode);
+
+document.getElementById('btnDecode').addEventListener('click', function() {
+    let offset = parseInt(document.getElementById('offsetDc').value); 
+    let string = document.getElementById('decifrar').value;
+    
+
+    let divResultado = document.querySelector("#decodeResult");
+    let frase = cipher.decode(offset,string);
+    console.log(frase);
+    divResultado.innerHTML = `${frase}`
+
+});
+
+
+//console.log(cipher.encode);
     //<h2 id="decodeResult"></h2>
     
 
