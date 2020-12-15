@@ -12,7 +12,7 @@ export default cipher;*/
 
 
 
-/* const cipher = {
+/* const cipher = { 
   
   encode : function(offset, string){//llamar los valores que ingreso el usuario const square = num => num * num;
     //alert('hola')
@@ -29,8 +29,9 @@ export default cipher;*/
     //console.log(textoCifrado);
     //return textoCifrado;
   },
-
-  //decode : function(){v
+https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Trabajando_con_objectos
+https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Bucles_e_iteraci%C3%B3n  
+//decode : function(){v
     
   }, 
 };*/
@@ -41,7 +42,7 @@ const cipher = {
     
     let textoCifrado='';
     for(let i = 0; i <= string.length; i++) { 
-      let ascii = string.charCodeAt(i);
+      let ascii = string.charCodeAt(i);//[i] despues de string
       let formula = (ascii - 65 + offset) % 26 + 65;
       textoCifrado += String.fromCharCode(formula);
     }
@@ -55,7 +56,8 @@ const cipher = {
     let textoCifrado='';
     for(let i = 0; i <= string.length; i++) { 
       let ascii = string.charCodeAt(i);
-      let formula = (ascii - 65 - offset) % 26 + 65;
+      //let formula = (ascii - 65 + (offset - 1)) % 26 + 65;
+      let formula = (ascii + 65 - offset) % 26 + 65;
       textoCifrado += String.fromCharCode(formula);
     }
 
@@ -63,6 +65,9 @@ const cipher = {
     return textoCifrado;
     
   }, 
+ /*  decode: function() {
+    encode(26-(offset),string)
+  } */
 };
 
 
